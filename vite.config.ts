@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import * as path from 'path';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -23,11 +24,13 @@ export default defineConfig({
         filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
+      resolvers: [ElementPlusResolver()],
     }),
     Components({
       dts: './src/components.d.ts',
       // imports 指定组件所在位置，默认为 src/components
       dirs: ['src/components/'],
+      resolvers: [ElementPlusResolver()],
     }),
   ],
 });
