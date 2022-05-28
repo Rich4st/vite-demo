@@ -4,9 +4,7 @@ import NProgress from 'nprogress';
 const router = createRouter({
   history: createWebHashHistory(),
   // 配置路由表
-  routes: [
-    { path: '/', component: () => import('../components/HelloWorld.vue') },
-  ],
+  routes: [],
 });
 
 // 配置路由守卫
